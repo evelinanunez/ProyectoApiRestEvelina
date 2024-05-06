@@ -1,13 +1,30 @@
-<p>home works!</p>
-<div>
-    <h1>
-        Información consumida desde la api
-    </h1>
-    <ul *ngFor="let item of data">
-        <li >
-            {{item.name}}
-        </li>
+<mat-toolbar style="text-align: center;">
+  <span>El mundo de Rick and Morty</span>
+</mat-toolbar>
+<main>
+  <div class="container mb-5">
+    <div class="d-flex justify-content-between my-3">
+        <div>
+          <button mat-button  (click)="verPagina(anteriorPagina)">ANTERIOR PÁGINA</button>
+        </div>
+        <div>
+          <button mat-button  (click)="verPagina(proximaPagina)">PRÓXIMA PÁGINA</button>
+        </div>
+    </div>
+    <div class="row" >
+     <div class="col-12 col-md-6 col-xl-3 my-3" *ngFor="let character of characters">
+      <app-card
+      [bgColor]="obtenerBgColor(character.status)"
+      [image]="character.image"
+      [title]="character.name"
+      [gender]="character.gender"
+      [species]="character.species"
+      ></app-card>
+    </div>
+  
+    </div>
+  
+  </div>
+</main>
 
-        <img src="{{item.image}}">
-    </ul>
-</div>
+
