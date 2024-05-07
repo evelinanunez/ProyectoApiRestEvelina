@@ -1,24 +1,33 @@
-<mat-toolbar style="text-align: center;">
-  <span>El mundo de Rick and Morty</span>
-</mat-toolbar>
 <main>
-  <div class="container mb-5">
-    <div class="d-flex justify-content-between my-3">
-        <div>
-          <button mat-button  (click)="verPagina(anteriorPagina)">ANTERIOR PÁGINA</button>
-        </div>
-        <div>
-          <button mat-button  (click)="verPagina(proximaPagina)">PRÓXIMA PÁGINA</button>
-        </div>
+  <section class="container text-center sticky-top" style="background-color: #ffff;">
+    <div class="row d-flex align-items-center" id="colorTitulo">
+      <div class="col-12 col-lg-9">
+          <h1 class="h-100 w-100 d-inline-block fs-1" >Rick and Morthy</h1>
+      </div>
+      <div class="col-12 col-lg-3">
+        <img src="../../assets/img/Rick-and-morthy-png.png" class="img-fluid" style="max-width: 10rem;">
+      </div>
     </div>
-    <div class="row" >
-     <div class="col-12 col-md-6 col-xl-3 my-3" *ngFor="let character of characters">
+    <div class="d-flex justify-content-between" >
+      <div class="my-3">
+        <button mat-button class="colorButton"  (click)="verPagina(anteriorPagina)">ANTERIOR PÁGINA</button>
+      </div>
+      <div class="my-3">
+        <button mat-button  (click)="verPagina(proximaPagina)">PRÓXIMA PÁGINA</button>
+      </div>
+  </div>
+  </section>
+  <div class="container mb-5">
+
+    <div class="row"  >
+     <div class="col-12 col-md-4 col-xl-3 my-3 mobile-card"  *ngFor="let character of characters">
       <app-card
       [bgColor]="obtenerBgColor(character.status)"
       [image]="character.image"
       [title]="character.name"
       [gender]="character.gender"
       [species]="character.species"
+      
       ></app-card>
     </div>
   

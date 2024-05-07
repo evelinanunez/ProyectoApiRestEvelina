@@ -1,8 +1,27 @@
 button{
-    background-color: #ffff6a;
-    color:#797979;
+    background-color: #ffffa2;
 }
 
 .colorAmarillo{
     color:#ffffa2;
+}
+
+.colorButton{
+    color: #ffffa2;
+}
+
+h1{
+    color: #ffffa2;
+}
+
+@media screen and (max-width: 767px) {
+    .mobile-card {
+  max-width: 50%;
+  max-height: 50%;
+    }
+}
+
+#colorTitulo{
+    background-color: #454546;
+    position:static;
 }
