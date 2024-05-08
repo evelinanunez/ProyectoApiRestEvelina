@@ -34,6 +34,5 @@ export class CardComponent {
 
   @Input()
   bgColorButton : string = '';
-  @Output()
-  seeCharacter = new EventEmitter();
+  
 }
